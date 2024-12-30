@@ -1,0 +1,11 @@
+<div class="w3-bar w3-black w3-top">
+  <a routerLink="/" class="title w3-bar-item w3-button w3-black">MyFootball</a>
+  <ng-container *ngFor="let page of pageLinks">
+    <a 
+      routerLink="{{page.url}}" 
+      class="w3-bar-item w3-button" 
+      [ngClass]="{'w3-black': this.location.path() === page.url}">
+      {{page.name}}
+    </a>
+  </ng-container>
+</div>

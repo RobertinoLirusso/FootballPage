@@ -1,0 +1,11 @@
+<app-default>
+    <app-header></app-header>
+    <div class="container responsive-grid">
+        <div class="w3-card-2 w3-white w3-hover-shadow w3-round" *ngFor="let club of clubs">
+            <img src="{{club.logo_url}}" alt="{{club.club_name}} logo" class="w3-image">
+            <div class="w3-container w3-center">
+                <p>{{club.club_name}}</p>
+            </div>
+        </div>
+    </div>
+</app-default>
