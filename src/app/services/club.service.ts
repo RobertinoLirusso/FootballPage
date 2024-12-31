@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Club } from '../interfaces/club';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClubService {
 
-  private apiUrl = 'http://localhost:3000/club'; 
+  private apiUrl = environment.apiUrl; 
 
   constructor(private http: HttpClient) {}
 
