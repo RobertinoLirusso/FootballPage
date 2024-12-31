@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
-    apiUrl: '', 
+    apiUrl: 'https://club-list-backend.onrender.com/club', 
   };
   
