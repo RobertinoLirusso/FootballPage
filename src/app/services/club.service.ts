@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Club } from '../interfaces/club';
@@ -14,7 +14,10 @@ export class ClubService {
   constructor(private http: HttpClient) {}
 
   getClubs(): Observable<Club[]> {
-    return this.http.get<Club[]>(this.apiUrl);
+    const headers = new HttpHeaders({
+      'Cache-Control': 'no-store',
+    });
+    return this.http.get<Club[]>(this.apiUrl, { headers });
   }
 
   getClubById(id: number): Observable<Club> {
